@@ -1,0 +1,215 @@
+
+
+
+:root{
+    --gradiante: to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%);
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    background-image: url("./images/bg-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Raleway';
+}
+
+main{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-block: 2rem;
+   
+}
+
+
+
+.primero{
+    padding: 2rem;
+    background-color: var(--dark-blue);
+    border-top-right-radius: 100px;
+   
+}
+
+.primero > div div{
+    margin-top: 2rem;
+    background-color: var(--very-dark-blue);
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-content: center;
+    border-radius: 10px;
+}
+
+.primero > div{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 40px 40px;
+ 
+}
+
+.segundo{
+    padding: 2rem;
+    position: relative;
+    grid-column: 1 / -1;
+    grid-row: 1 / 3;
+    background-color: var(--dark-blue);
+}
+
+.tag{
+    grid-column: 1 / -1;
+    grid-row: 2 / 4;
+    background-color: white;
+    width: max-content;
+    z-index: 4;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    padding: 0 2rem;
+    border-radius: 10px;
+}
+
+.tag p{
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.tag span{
+    font-size: 3em;
+    font-weight: 600;
+    padding-right: .5rem;
+}
+
+.segundo h1{
+    font-size: 1em;
+    text-align: center;
+    color: var(--grayish-blue);
+    font-weight: 400;
+}
+
+h1 span{
+    color: var(--pale-blue);
+}
+
+.barra{
+    margin-block: 1rem;
+    width: 100%;
+    height: 15px;
+    background-color: var(--very-dark-blue);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.barra > div{
+    width: 80%;
+    height: 12px;
+    margin-inline: .15rem;
+    border-radius: 30px;
+    background: linear-gradient(var(--gradiante));
+    position: relative;
+}
+
+.barra > div::before{
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: var(--pale-blue);
+    right: 3px;
+    top: 1px;
+}
+
+.parragraf{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: var(--pale-blue);
+}
+
+.parragraf p{
+    margin-top: 0;
+}
+
+@media (min-width: 800px) {
+    body{
+        background-image: url("./images/bg-desktop.png");
+        background-size: cover;
+        background-position: bottom;
+        height: 600px;
+    }
+    main{
+        flex-direction: row;
+        justify-content: center;
+ 
+    }
+
+    .primero{
+        max-width: 400px;
+    }
+    .primero, .grid{
+        width: 45%;
+        
+    }
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 40px 40px 1fr;
+        max-width: 600px;
+    }
+    .segundo{
+        grid-column: 1 / -1;
+        grid-row: 2 / 4;
+    }
+  
+    
+    .tag{
+        grid-column: 1 / -1;
+        grid-row: 1 / 3;
+        justify-self: end;
+        margin-right: 2rem;
+        position: relative;
+    }
+
+    .tag::after{
+        position: absolute;
+        content: "";
+        top: 90%;
+        right: 0;
+        height: 20px;
+        width: 20px;
+        background-color: white;
+        clip-path: polygon(100% 100%, 0 0, 100% 0);
+    }
+
+
+
+    .segundo h1{
+        text-align: left;
+    }
+  }
+
+
